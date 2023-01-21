@@ -1,4 +1,4 @@
-name : go-lang pipeline
+name : CI Cd Pipeline
 on: push
 jobs:
   test:
