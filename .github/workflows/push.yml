@@ -2,9 +2,16 @@ name: Build and Publish Docker Image
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - name: Run Unit Tests
+        run: go test ./...
+
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
