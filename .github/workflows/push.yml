@@ -21,10 +21,10 @@ jobs:
     
     ## Builds our docker image!
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag my-image-name:v1
 
     - name: Run the Docker image
-      run: docker run -d --restart=always -p 8080:80 my-image-name:$(date +%s)
+      run: docker run -d --restart=always -p 8080:80 my-image-name:v1
 
   Deploy:
     runs-on: ubuntu-latest
