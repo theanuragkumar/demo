@@ -25,6 +25,9 @@ jobs:
 
     - name: Run the Docker image
       run: docker run -d --restart=always -p 8080:80 my-image-name:v1
+    
+    - name: Run Tests
+      run: go test ./...
 
   Deploy:
     runs-on: ubuntu-latest
